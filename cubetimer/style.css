@@ -1,5 +1,26 @@
 body {
+  padding: 0;
+  margin: 0;
   background-color: #EEE;
+}
+
+#controls {
+  padding: 0;
+  margin: 0;
+  top: 0;
+  position: absolute;
+  font-family: Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#controls ul {
+  padding: 0;
+  margin: 1em;
+}
+
+#controls ul li {
+  list-style-type: none;
+  line-height: 1.4em;
 }
 
 #time {
