@@ -40,8 +40,7 @@ function randomTurn() {
 randomTurn.previous = null;
 
 function randomScramble() {
-  var scramble = '';
-  var first = randomTurn();
+  var scramble = randomTurn();
   for (var i = 0; i < 24; ++i)
     scramble += ' ' + randomTurn();
   return scramble;
