@@ -144,6 +144,25 @@ window.addEventListener("keyup", function (e) {
   }
 });
 
+time.addEventListener("mouseup", function () {
+  if (recentlyStopped) {
+    recentlyStopped = false;
+    scramble.innerHTML = randomScramble();
+    return;
+  }
+  timer.reset();
+  running = true;
+});
+
+time.addEventListener("mousedown", function () {
+  if (running) {
+    running = false;
+    recentlyStopped = true;
+    scoreboard.add(parseFloat(time.innerHTML));
+    scoreboard.render(scores);
+  }
+});
+
 window.addEventListener("keydown", function (e) {
   if (e.which == 32 && running) {
     running = false;
