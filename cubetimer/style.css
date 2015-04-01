@@ -24,6 +24,10 @@ body {
 }
 
 #time {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-family: monospace;
   font-size  : 4em;
   width: 50%;
