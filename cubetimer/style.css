@@ -1,0 +1,62 @@
+body {
+  background-color: #EEE;
+}
+
+#time {
+  font-family: monospace;
+  font-size  : 4em;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  margin-top: 3em;
+}
+#scramble {
+  font-family: monospace;
+  font-size: 1.4em;
+  width: 100%;
+  text-align: center;
+  padding-top: 1.8em;
+}
+
+#solves {
+  font-family: monospace;
+  font-size: 2em;
+  line-height: 2em;
+  margin: 2em auto;
+  width: 16em;
+  height: 18em;
+  min-width: 100px;
+  border-radius: 0.8em;
+  border: 1px solid #232;
+  background-color: #FFF;
+  overflow: auto;
+}
+
+#solves ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+#solves ul li:hover {
+  cursor: pointer;
+  background-color: rgba(100, 20, 20, 0.4) !important;
+}
+
+#solves ul li:nth-child(even) {
+  background-color: #F2F2F2;
+}
+
+#solves ul li:first-child {
+  border-bottom: 1px solid #333;
+}
+
+#solves ul li:first-child:hover {
+  background-color: #fff !important;
+  cursor: default;
+}
+
+.fastest {
+  background-color: #33AA33 !important;
+}
