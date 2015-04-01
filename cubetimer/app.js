@@ -144,7 +144,7 @@ window.addEventListener("keyup", function (e) {
   }
 });
 
-time.addEventListener("mouseup", function () {
+time.addEventListener("touchend", function () {
   if (recentlyStopped) {
     recentlyStopped = false;
     scramble.innerHTML = randomScramble();
@@ -154,7 +154,7 @@ time.addEventListener("mouseup", function () {
   running = true;
 });
 
-time.addEventListener("mousedown", function () {
+time.addEventListener("touchstart", function () {
   if (running) {
     running = false;
     recentlyStopped = true;
