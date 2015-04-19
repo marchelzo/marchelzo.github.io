@@ -172,7 +172,7 @@ window.addEventListener("keydown", function (e) {
   } else if (e.which == "R".charCodeAt(0)) {
     scoreboard.reset();
     scoreboard.render(scores);
-    time.innerHTML = "0.0s";
+    time.innerHTML = "0.000s";
   } else if (e.which == "X".charCodeAt(0)) {
     scoreboard.removeLast();
     scoreboard.render(scores);
