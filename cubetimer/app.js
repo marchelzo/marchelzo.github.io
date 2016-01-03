@@ -66,7 +66,9 @@ function Scoreboard() {
   this.render = function (list) {
 
     // remove old entries
-    while (list.firstChild) list.removeChild(list.firstChild);
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
+    }
 
     // the top entry is the mean solve time
     var meanEntry = document.createElement("li");
@@ -100,9 +102,11 @@ function Scoreboard() {
     }
 
     // identify the fastest entry (for styling)
-    if (fastest)
+    if (fastest) {
       fastest.setAttribute("class", "fastest");
-
+    }
+    
+    list.scrollTop = 0;
   }
 
   this.add = function (score) {
