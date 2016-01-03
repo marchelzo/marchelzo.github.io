@@ -105,8 +105,6 @@ function Scoreboard() {
     if (fastest) {
       fastest.setAttribute("class", "fastest");
     }
-    
-    list.scrollTop = 0;
   }
 
   this.add = function (score) {
@@ -136,6 +134,14 @@ var time = document.getElementById("time");
 var scores = document.getElementById("solves").children[0];
 var scoreboard = new Scoreboard(100);
 
+function addSolve(t) {
+    running = false;
+    recentlyStopped = true;
+    scoreboard.add(t);
+    scoreboard.render(scores);
+    scores.parentElement.scrollTop = 0;
+}
+
 window.addEventListener("keyup", function (e) {
   if (recentlyStopped) {
     recentlyStopped = false;
@@ -160,19 +166,13 @@ time.addEventListener("touchend", function () {
 
 time.addEventListener("touchstart", function () {
   if (running) {
-    running = false;
-    recentlyStopped = true;
-    scoreboard.add(parseFloat(time.innerHTML));
-    scoreboard.render(scores);
+    addSolve(parseFloat(time.innerHTML));
   }
 });
 
 window.addEventListener("keydown", function (e) {
   if (e.which == 32 && running) {
-    running = false;
-    recentlyStopped = true;
-    scoreboard.add(parseFloat(time.innerHTML));
-    scoreboard.render(scores);
+    addSolve(parseFloat(time.innerHTML));
   } else if (e.which == "R".charCodeAt(0)) {
     scoreboard.reset();
     scoreboard.render(scores);
